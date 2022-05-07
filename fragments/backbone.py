@@ -1,8 +1,7 @@
-import numpy as np
-from "../constants.py" import *
+from constants import *
 import tensorflow as tf
 import tensorflow_addons as tfa
-from aux_func.auxiliary import convolution_batchNormalization
+from auxiliary import convolution_batchNormalization
 
 
 def csp_block(inputs, filters, num_blocks):
@@ -49,10 +48,10 @@ def csp_darknet53(input_shape):
     return tf.keras.Model(inputs, [output_1, output_2, output_3], name="CSP_Darknet_53_layers")
 
 
-output_1, output_2, output_3 = csp_darknet53((416, 416, 3)).outputs
-if  output_1.shape.as_list() == [None, 52, 52, 256]:
-    print("TRUE")
-if  output_2.shape.as_list() == [None, 26, 26, 512]:
-    print("TRUE")
-if  output_3.shape.as_list() == [None, 13, 13, 1024]:
-    print("TRUE")
+# output_1, output_2, output_3 = csp_darknet53((416, 416, 3)).outputs
+# if  output_1.shape.as_list() == [None, 52, 52, 256]:
+#     print("TRUE")
+# if  output_2.shape.as_list() == [None, 26, 26, 512]:
+#     print("TRUE")
+# if  output_3.shape.as_list() == [None, 13, 13, 1024]:
+#     print("TRUE")
