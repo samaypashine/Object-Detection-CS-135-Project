@@ -1,0 +1,6 @@
+EPOCHS = 20000
+
+ALPHA = 0.1
+
+IOU_THRESH = 0.6
+
