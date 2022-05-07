@@ -1,7 +1,4 @@
 from constants import *
-import tensorflow as tf
-import tensorflow_addons as tfa
-
 
 def preprocess_image(image):
     image = tf.image.decode_image(image)
