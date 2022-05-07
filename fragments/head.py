@@ -122,14 +122,14 @@ def yolov4_head(input_shapes, anchors, num_classes, training, yolo_max_boxes, yo
 
     return tf.keras.Model([input_1, input_2, input_3], output, name="YOLOv4_head")
 
-bounding_box_shape = 4
-objectness_score_shape = 1
-expected_head_shape = (40 + objectness_score_shape) + bounding_box_shape
+# bounding_box_shape = 4
+# objectness_score_shape = 1
+# expected_head_shape = (40 + objectness_score_shape) + bounding_box_shape
 
-output_1, output_2, output_3 = yolov4_head([(52, 52, 128), (26, 26, 256), (13, 13, 512)], [np.array([(12, 16), (19, 36), (40, 28)], np.float32), np.array([(36, 75), (76, 55), (72, 146)], np.float32), np.array([(142, 110), (192, 243), (459, 401)], np.float32),], 40, training=True, yolo_max_boxes=20, yolo_iou_threshold=0.5, yolo_score_threshold=0.8).outputs
-if output_1.shape.as_list() == [None, 52, 52, 3, expected_head_shape]:
-    print(True)
-if output_2.shape.as_list() == [None, 26, 26, 3, expected_head_shape]:
-    print(True)
-if output_3.shape.as_list() == [None, 13, 13, 3, expected_head_shape]:
-    print(True)
+# output_1, output_2, output_3 = yolov4_head([(52, 52, 128), (26, 26, 256), (13, 13, 512)], [np.array([(12, 16), (19, 36), (40, 28)], np.float32), np.array([(36, 75), (76, 55), (72, 146)], np.float32), np.array([(142, 110), (192, 243), (459, 401)], np.float32),], 40, training=True, yolo_max_boxes=20, yolo_iou_threshold=0.5, yolo_score_threshold=0.8).outputs
+# if output_1.shape.as_list() == [None, 52, 52, 3, expected_head_shape]:
+#     print(True)
+# if output_2.shape.as_list() == [None, 26, 26, 3, expected_head_shape]:
+#     print(True)
+# if output_3.shape.as_list() == [None, 13, 13, 3, expected_head_shape]:
+#     print(True)

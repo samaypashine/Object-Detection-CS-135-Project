@@ -1,7 +1,15 @@
+import tensorflow as tf
+import tensorflow_addons as tfa
 from constants import *
 
-def preprocess_image(image):
-    image = tf.image.decode_image(image)
+
+def compute_normalized_anchors(anchors, input_shape):
+    height, width = input_shape[:2]
+    return [anchor / np.array([width, height]) for anchor in anchors]
+
+
+def preprocess_image(image_path):
+    image = tf.image.decode_image(image_path)
     image = tf.image.resize(image, (HEIGHT, WIDTH))
     image = tf.expand_dims(image, axis=0) / 255.0
     return image
