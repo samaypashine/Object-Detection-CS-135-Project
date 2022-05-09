@@ -1,5 +1,15 @@
+# /**
+#  * @file box.py
+#  * @author Samay Pashine, Lan Nguyen, Yuyao Guo, and Zhangcheng Sun
+#  * @brief bb extraction from DF for RCNN - Object Detection
+#  * @version 3.0
+#  * @date 2022-05-09
+#  * @copyright Copyright (c) 2022
+#  */
+
 import cv2
 
+# Function to extract coordinates from DF and return the cumulative list.
 def bounding_box_from_DF(df, img = None, draw = False, cummulate = False):
     values = []
     for row in df.iterrows():

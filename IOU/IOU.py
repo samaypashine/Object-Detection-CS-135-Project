@@ -1,3 +1,13 @@
+# /**
+#  * @file IOU.py
+#  * @author Samay Pashine, Lan Nguyen, Yuyao Guo, and Zhangcheng Sun
+#  * @brief Taking the Intersection of Union for RCNN - Object Detection
+#  * @version 3.0
+#  * @date 2022-05-09
+#  * @copyright Copyright (c) 2022
+#  */
+
+# Function to evaluate the overall bounding box.
 def IOU(bb1, bb2):
     x_left = max(bb1['x1'], bb2['x1'])
     y_top = max(bb1['y1'], bb2['y1'])

@@ -1,9 +1,20 @@
+# /**
+#  * @file code.py
+#  * @author Samay Pashine, Lan Nguyen, Yuyao Guo, and Zhangcheng Sun
+#  * @brief Preprocessing code for RCNN - Object Detection
+#  * @version 3.0
+#  * @date 2022-05-09
+#  * @copyright Copyright (c) 2022
+#  */
+
+# Importing the libraries
 import os
 import cv2
 import pandas as pd
 from IOU.IOU import *
 from bb_box.box import *
 
+# Function to go through dataset, take the coordinates and filtering them.
 def preprocessing(sed_detector, images_path, images_annotations):
     num = 0
     train_images, train_labels = [], []

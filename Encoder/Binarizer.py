@@ -1,6 +1,15 @@
+# /**
+#  * @file Binarizer.py
+#  * @author Samay Pashine, Lan Nguyen, Yuyao Guo, and Zhangcheng Sun
+#  * @brief Encoding for RCNN - Object Detection
+#  * @version 3.0
+#  * @date 2022-05-09
+#  * @copyright Copyright (c) 2022
+#  */
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer
 
+# Extension of the base class to encode the label for the binary classification.
 class Label_Binarizer(LabelBinarizer):
     def transform(self, y):
         Y = super().transform(y)
