@@ -1,3 +1,4 @@
+from tqdm import tqdm
 from IOU.IOU import *
 from Encoder.Binarizer import *
 from bb_box.box import *
@@ -59,15 +60,16 @@ class RCNN():
         return self.hist
 
 
-    def predict(self, img):
-        self.ss.setBaseImage(img)
-        self.ss.switchToSelectiveSearchFast()
-        ssresults = self.ss.process()
+    def predict(self, img, Acc_Threshold = 0.50):
+        
+        self.sed_detector.setBaseImage(img)
+        self.sed_detector.switchToSelectiveSearchFast()
+        results = self.sed_detector.process()
         imout = img.copy()
         
-        preds = []
+        preds, coords = [], []
 
-        for e,result in enumerate(ssresults):
+        for e,result in enumerate(tqdm(results)):
             if e < 2000:
                 x,y,w,h = result
                 timage = imout[y:y+h,x:x+w]
@@ -75,8 +77,9 @@ class RCNN():
                 img = np.expand_dims(resized, axis=0)
                 out = self.model.predict(img)
                 preds.append(out)
+                coords.append([x, y, w, h])
 
-        return preds
+        return preds, coords
 
 
 if __name__ == "__main__":
