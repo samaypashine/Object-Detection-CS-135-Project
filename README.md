@@ -46,7 +46,7 @@ The architecture is built by Tensorflow. More details can be found in `train.py`
 
 Our model has the AUC of **97.61 %** for the train dataset and **92.41 %** for the train dataset with attention layer in the model. 
 
-## CONCLUSION
+## Conclusion
 
 We successfully **built a deep neural network model** by implementing **Region-Based Convolutional Neural Network (R-CNN)** to automatically detect airplane image with high accuracy rate **97.61 %**.
 In addition, we also **add Attention Mechanism** in our experiment for further advancement.
