@@ -4,7 +4,7 @@ By **Samay Pashine**, **Lan Nguyen**, **Yuyao Guo** and **Zhangchen Sun**
 **Object Detection with Region-Based Convolution Neural Network based on VGG Backbone** is the project that we built R-CNN model based VGG backbone using python
 and deep learning libraries like tensorflow, scikit-learn with airplane dataset.
 
-![](https://ibb.co/tMM2pZD)
+![](https://imgur.com/a/xjRcq2M)
 
 ## Introduction
 
