@@ -44,7 +44,7 @@ The architecture is built by Tensorflow. More details can be found in `train.py`
 
 ### 5. Model performance summary
 
-Our model has the AUC of **97.61 %** for the train dataset and **92.41 %** for the train dataset with attention layer in the model. 
+Our model has the accuracy of **97.61 %** for the train dataset and **92.41 %** for the train dataset with attention layer in the model. 
 
 ## Conclusion
 
